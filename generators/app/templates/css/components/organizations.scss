@@ -1,0 +1,33 @@
+/**
+ *
+ */
+
+.organization {
+	margin: vr(4) auto;
+	max-width: vr(35);
+	background: $color-white;
+}
+
+.organization-header {
+	padding: vr(1);
+	background: $color-blue;
+}
+
+.organization-name {
+	@include typi($typi-h1);
+	margin: 0;
+	color: $color-white;
+	line-height: vr(2);
+	font-size: vr(2);
+}
+
+.organization-description {
+	margin: 0;
+	padding: vr(1);
+}
+
+.organization-repositories {
+	margin: 0;
+	padding: vr(1);
+	list-style: none;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "generator-react-boilerplate-vtech",
+  "version": "0.1.0",
+  "description": "A generator for React projects.",
+  "repository": "v-technologies/generator-react-boilerplate-vtech",
+  "author": "Félix Girault <felix@vtech.fr>",
+  "license": "MIT",
+  "main": "generators/index.js",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "react",
+    "generator",
+    "yeoman-generator"
+  ],
+  "scripts": {
+    "prepublish": "nsp check"
+  },
+  "dependencies": {
+    "yeoman-generator": "^0.22.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "nsp": "^2.3.0"
+  }
+}
