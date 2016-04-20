@@ -3,8 +3,8 @@
  */
 
 .organization {
-	margin: vr(4) auto;
 	max-width: vr(35);
+	margin: vr(4) auto;
 	background: $color-white;
 }
 
@@ -16,9 +16,9 @@
 .organization-name {
 	@include typi($typi-h1);
 	margin: 0;
-	color: $color-white;
-	line-height: vr(2);
 	font-size: vr(2);
+	line-height: vr(2);
+	color: $color-white;
 }
 
 .organization-description {
