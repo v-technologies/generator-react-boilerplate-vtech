@@ -40,7 +40,7 @@ module.exports = {
 				test: /\.scss$/,
 				include: fullPath('<%= props.cssPath %>'),
 				loader: ExtractTextPlugin.extract('style', [
-					'css?sourceMap',
+					'css-loader?-url&sourceMap',
 					'sass?sourceMap'
 				])
 			}
