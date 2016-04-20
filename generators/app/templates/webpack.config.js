@@ -2,6 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const fullPath = path.resolve.bind(null, __dirname);
 
@@ -49,6 +50,7 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
 		}),
+		new StyleLintPlugin(),
 		new ExtractTextPlugin('<%= props.distCssName %>', {
 			allChunks: true
 		})

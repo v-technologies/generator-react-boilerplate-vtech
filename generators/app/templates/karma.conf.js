@@ -9,7 +9,7 @@ const fullPath = path.resolve.bind(null, __dirname);
 module.exports = function(config) {
 	config.set({
 		files: [
-			'karma.bundle.js'
+			'<%= props.testsPath %>/**/*.js'
 		],
 		frameworks: [
 			'mocha',
@@ -23,9 +23,8 @@ module.exports = function(config) {
 			'Firefox'
 		],
 		preprocessors: {
-			'karma.bundle.js': [
-				'webpack'
-			]
+			'<%= props.jsPath %>/**/*.js': ['webpack'],
+			'<%= props.testsPath %>/**/*.js': ['webpack']
 		},
 		webpack: {
 			devtool: 'inline-source-map',
