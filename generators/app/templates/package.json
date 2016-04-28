@@ -5,7 +5,7 @@
   "main": "<%= props.jsPath %>/index.js",
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack --config webpack.config.production.js",
+    "build": "npm run clean && webpack --config webpack.config.production.js",
     "serve": "webpack-dev-server",
     "clean": "npm prune && npm install && npm dedupe",
     "test": "karma start"
