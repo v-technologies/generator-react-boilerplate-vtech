@@ -1,10 +1,18 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
-import {IntlProvider} from 'react-intl';
+import {IntlProvider, addLocaleData} from 'react-intl';
+import en from 'react-intl/locale-data/en';
 import routes from './routes';
 import store from './store';
 import messages from './messages/en';
+
+
+
+/**
+ *
+ */
+addLocaleData(en);
 
 
 
