@@ -1,4 +1,3 @@
-import createSagaMiddleware from 'redux-saga';
 import {watchFetchRepositories} from './home';
 
 
@@ -6,10 +5,8 @@ import {watchFetchRepositories} from './home';
 /**
  *
  */
-const sagas = createSagaMiddleware(
-	watchFetchRepositories
-);
-
-
-
-export default sagas;
+export default function* sagas() {
+	yield [
+		watchFetchRepositories()
+	];
+}

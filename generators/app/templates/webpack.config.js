@@ -2,6 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const fullPath = path.resolve.bind(null, __dirname);
@@ -22,6 +23,9 @@ module.exports = {
 		filename: '<%= props.distJsName %>',
 	},
 	devtool: 'source-map',
+	devServer: {
+		historyApiFallback: true
+	},
 	module: {
 		preLoaders: [
 			{
@@ -40,12 +44,16 @@ module.exports = {
 				test: /\.scss$/,
 				include: fullPath('<%= props.cssPath %>'),
 				loader: ExtractTextPlugin.extract('style', [
-					'css-loader?-url&sourceMap',
-					'sass?sourceMap'
+					'css?-url&sourceMap',
+					'sass?sourceMap',
+					'postcss'
 				])
 			}
 		]
 	},
+	postcss: [
+		autoprefixer()
+	],
 	plugins: [
 		new webpack.ProvidePlugin({
 			fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'

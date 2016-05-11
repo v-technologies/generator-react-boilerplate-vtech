@@ -6,7 +6,7 @@ import {UPDATE_REPOSITORIES} from '../actions/home';
  *
  */
 const initialState = {
-	repositories: null
+	repositories: []
 };
 
 
@@ -14,12 +14,20 @@ const initialState = {
 /**
  *
  */
-export default function reduce(state = initialState, {type, payload}) {
+const updateRepositories = (state, {repositories}) => ({
+	...state,
+	repositories
+});
+
+
+
+/**
+ *
+ */
+export default function home(state = initialState, {type, payload}) {
 	switch (type) {
 		case UPDATE_REPOSITORIES:
-			return {
-				repositories: payload.repositories
-			};
+			return updateRepositories(state, payload);
 
 		default:
 			return state;

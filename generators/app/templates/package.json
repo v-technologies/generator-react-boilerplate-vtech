@@ -11,6 +11,7 @@
     "test": "karma start"
   },
   "devDependencies": {
+    "autoprefixer": "^6.3.6",
     "babel-core": "^6.7.6",
     "babel-eslint": "^6.0.2",
     "babel-loader": "^6.2.4",
@@ -42,6 +43,7 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
     "node-sass": "^3.4.2",
+    "postcss-loader": "^0.9.1",
     "react-addons-test-utils": "^15.0.1",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
@@ -65,6 +67,7 @@
     "react-router": "^2.1.1",
     "redux": "^3.4.0",
     "redux-saga": "^0.9.5",
+    "render-if": "^0.1.1",
     "susy": "^2.2.12",
     "typi": "^2.1.0",
     "whatwg-fetch": "^0.11.0"

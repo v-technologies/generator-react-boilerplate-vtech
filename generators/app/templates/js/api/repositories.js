@@ -1,18 +1,3 @@
-import {PropTypes} from 'react';
-
-
-
-/**
- *
- */
-export const repositoryShape = PropTypes.shape({
-	name: PropTypes.string.isRequired,
-	url: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired
-});
-
-
-
 /**
  *
  */
@@ -23,7 +8,8 @@ export function fetchByOrganization(name) {
 			repositories.map((repository) => ({
 				name: repository.name,
 				url: repository.html_url,
-				description: repository.description
+				description: repository.description,
+				owner: repository.owner.login
 			}))
 		);
 }

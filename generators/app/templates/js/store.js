@@ -1,4 +1,5 @@
 import {createStore, compose, applyMiddleware} from 'redux';
+import createSagaMiddleware from 'redux-saga';
 import {identity} from 'lodash';
 import reducers from './reducers';
 import sagas from './sagas';
@@ -13,6 +14,7 @@ const shouldSetupDevTools = (
 	&& window.devToolsExtension
 );
 
+const sagaMiddleware = createSagaMiddleware();
 const devToolsMiddleware = shouldSetupDevTools
 	? window.devToolsExtension()
 	: identity;
@@ -20,10 +22,12 @@ const devToolsMiddleware = shouldSetupDevTools
 const store = createStore(
 	reducers,
 	compose(
-		applyMiddleware(sagas),
+		applyMiddleware(sagaMiddleware),
 		devToolsMiddleware
 	)
 );
+
+sagaMiddleware.run(sagas);
 
 
 

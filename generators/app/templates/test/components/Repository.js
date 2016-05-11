@@ -25,7 +25,7 @@ describe('Repository', function() {
 			/>
 		);
 
-		expect(repository.find('.repository-name').text()).to.equal(name);
-		expect(repository.find('.repository-description').text()).to.equal(description);
+		expect(repository.find('.Repository-name').text()).to.equal(name);
+		expect(repository.find('.Repository-description').text()).to.equal(description);
 	});
 });

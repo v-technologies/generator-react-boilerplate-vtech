@@ -30,6 +30,7 @@ Modules
 * [react-redux](https://github.com/facebook/react) to bind redux state to components
 * [redux](https://github.com/reactjs/redux) for a functional flux implementation
 * [redux-saga](https://github.com/yelouafi/redux-saga) to handle asynchronous flux actions
+* [render-if](https://github.com/ajwhite/render-if) to handle conditional rendering
 * [lodash](https://github.com/lodash/lodash) for great functional helpers
 * [classnames](https://github.com/JedWatson/classnames) to generate dynamic class names for components
 * [history](https://github.com/reactjs/history) to handle browser histories
@@ -54,15 +55,18 @@ Architecture
 ------------
 
 ```
-├── css               (styles)
-├── dist              (compilation output)
-├── src               (scripts)
-│   ├── actions       (redux actions)
-│   ├── api           (libs making api calls)
-│   ├── components    (components and redux containers)
-│   ├── messages      (i18n messages)
-│   ├── reducers      (redux reducers)
-│   ├── routes        (first-class route components)
-│   └── sagas         (redux sagas)
-└── test              (files following the same structure as src)
+├── /css               (styles)
+├── /dist              (compilation output)
+├── /src               (scripts)
+│   ├── /actions       (redux actions)
+│   ├── /api           (api calls)
+│   ├── /components    (components and redux containers)
+│   ├── /messages      (i18n messages)
+│   ├── /reducers      (redux reducers)
+│   ├── /sagas         (redux sagas)
+│   ├── /types         (prop types)
+│   ├── index.js       (entry point)
+│   ├── routes.js      (routes)
+│   └── store.js       (redux store)
+└── /test              (files following the same structure as src)
 ```

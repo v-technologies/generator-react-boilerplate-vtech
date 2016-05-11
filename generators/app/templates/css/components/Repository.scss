@@ -1,0 +1,26 @@
+/**
+ *
+ */
+
+.Repository {
+	margin-bottom: vr(1);
+}
+
+.Repository-name {
+	@include typi($typi-h2);
+	margin: 0;
+}
+
+.Repository-name a {
+	text-decoration: none;
+	color: $color-blue-light;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+.Repository-description {
+	margin: 0;
+}

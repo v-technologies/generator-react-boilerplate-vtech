@@ -1,30 +1,35 @@
-import React, {Component, PropTypes} from 'react';
-import {repositoryShape} from '../api/repositories';
+import React, {PropTypes} from 'react';
+import {intlShape} from 'react-intl';
+import Helmet from 'react-helmet';
+import {repositoryShape} from '../types/repository';
 import Organization from './Organization';
+import renderIf from 'render-if';
 
 
 
 /**
  *
  */
-export default class Home extends Component {
+export default function Home({repositories}, {intl}) {
+	return (
+		<div>
+			<Helmet
+				title={intl.formatMessage({
+					id: 'page.home.title'
+				})}
+			/>
 
-	static propTypes = {
-		organization: PropTypes.string.isRequired,
-		fetchRepositories: PropTypes.func.isRequired,
-		repositories: PropTypes.arrayOf(repositoryShape)
-	};
-
-	componentDidMount() {
-		const {organization, fetchRepositories} = this.props;
-		fetchRepositories(organization);
-	}
-
-	render() {
-		const {organization, repositories} = this.props;
-
-		return repositories
-			? <Organization name={organization} repositories={repositories} />
-			: <noscript />;
-	}
+			{renderIf(repositories.length)(() => (
+				<Organization repositories={repositories} />
+			))}
+		</div>
+	);
 }
+
+Home.contextTypes = {
+	intl: intlShape
+};
+
+Home.propTypes = {
+	repositories: PropTypes.arrayOf(repositoryShape)
+};

@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
-import {repositoryShape} from '../api/repositories';
+import {first} from 'lodash';
+import {repositoryShape} from '../types/repository';
 import Repository from './Repository';
 
 
@@ -7,18 +8,20 @@ import Repository from './Repository';
 /**
  *
  */
-export default function Organization({name, repositories}) {
+export default function Organization({repositories}) {
+	const name = first(repositories).owner;
+
 	return (
-		<article className="organization">
-			<header className="organization-header">
-				<h1 className="organization-name">
+		<article className="Organization">
+			<header className="Organization-header">
+				<h1 className="Organization-name">
 					{name}
 				</h1>
 			</header>
 
-			<ul className="organization-repositories">
+			<ul className="Organization-repositoryList">
 				{repositories.map((repository, i) => (
-					<li key={i} className="organization-repository">
+					<li key={i} className="Organization-repositoryItem">
 						<Repository {...repository} />
 					</li>
 				))}
@@ -28,6 +31,5 @@ export default function Organization({name, repositories}) {
 }
 
 Organization.propTypes = {
-	name: PropTypes.string.isRequired,
 	repositories: PropTypes.arrayOf(repositoryShape).isRequired
 };
