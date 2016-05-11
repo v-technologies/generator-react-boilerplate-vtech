@@ -3,7 +3,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const fullPath = path.resolve.bind(null, __dirname);
 
@@ -27,13 +26,6 @@ module.exports = {
 		historyApiFallback: true
 	},
 	module: {
-		preLoaders: [
-			{
-				test: /\.js$/,
-				include: fullPath('<%= props.jsPath %>'),
-				loader: 'eslint',
-			}
-		],
 		loaders: [
 			{
 				test: /\.js$/,
@@ -58,7 +50,6 @@ module.exports = {
 		new webpack.ProvidePlugin({
 			fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
 		}),
-		new StyleLintPlugin(),
 		new ExtractTextPlugin('<%= props.distCssName %>', {
 			allChunks: true
 		})

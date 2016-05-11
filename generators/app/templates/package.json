@@ -4,9 +4,9 @@
   "description": "<%= props.projectDescription %>",
   "main": "<%= props.jsPath %>/index.js",
   "scripts": {
-    "start": "webpack --watch",
+    "start": "webpack --watch --config webpack.config.dev.js",
+    "serve": "webpack-dev-server --config webpack.config.dev.js",
     "build": "npm run clean && webpack --config webpack.config.production.js",
-    "serve": "webpack-dev-server",
     "clean": "npm prune && npm install && npm dedupe",
     "test": "karma start"
   },
