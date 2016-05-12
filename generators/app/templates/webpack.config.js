@@ -13,6 +13,8 @@ const fullPath = path.resolve.bind(null, __dirname);
  */
 module.exports = {
 	entry: [
+		'babel-polyfill',
+		'whatwg-fetch',
 		'./<%= props.jsPath %>/index',
 		'./<%= props.cssPath %>/index.scss'
 	],
@@ -47,9 +49,6 @@ module.exports = {
 		autoprefixer()
 	],
 	plugins: [
-		new webpack.ProvidePlugin({
-			fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch'
-		}),
 		new ExtractTextPlugin('<%= props.distCssName %>', {
 			allChunks: true
 		})
