@@ -39,15 +39,29 @@ module.exports = {
 				include: fullPath('<%= props.cssPath %>'),
 				loader: ExtractTextPlugin.extract('style', [
 					'css?-url&sourceMap',
-					'sass?sourceMap',
-					'postcss'
+					'postcss',
+					'sass?sourceMap'
 				])
 			}
 		]
 	},
-	postcss: [
-		autoprefixer()
-	],
+	postcss: function(webpack) {
+		return [
+			autoprefixer({
+				browsers: [
+					'ie >= 8',
+					'ie_mob >= 10',
+					'ff >= 20',
+					'chrome >= 34',
+					'safari >= 7',
+					'opera >= 23',
+					'ios >= 7',
+					'android >= 4.4',
+					'bb >= 10'
+				]
+			})
+		];
+	},
 	plugins: [
 		new ExtractTextPlugin('<%= props.distCssName %>', {
 			allChunks: true
