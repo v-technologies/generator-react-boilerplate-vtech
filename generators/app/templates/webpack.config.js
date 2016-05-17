@@ -45,7 +45,7 @@ module.exports = {
 			}
 		]
 	},
-	postcss: function(webpack) {
+	postcss: function() {
 		return [
 			autoprefixer({
 				browsers: [
