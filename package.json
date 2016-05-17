@@ -1,6 +1,6 @@
 {
   "name": "generator-react-boilerplate-vtech",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A generator for React projects.",
   "repository": "v-technologies/generator-react-boilerplate-vtech",
   "author": "Félix Girault <felix@vtech.fr>",
