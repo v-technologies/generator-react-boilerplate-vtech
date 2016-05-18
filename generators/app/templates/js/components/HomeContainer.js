@@ -1,5 +1,4 @@
 import {connect} from 'react-redux';
-import {property} from 'lodash';
 import Home from './Home';
 
 
@@ -7,16 +6,15 @@ import Home from './Home';
 /**
  *
  */
-const mapStateToProps = property('home');
+const mapStateToProps = (state) => ({
+	repositories: state.home.repositories
+});
+
+
 
 /**
  *
  */
-const mapDispatchToProps = () => ({});
-
-
-
 export default connect(
-	mapStateToProps,
-	mapDispatchToProps
+	mapStateToProps
 )(Home);

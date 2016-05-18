@@ -14,20 +14,12 @@ const initialState = {
 /**
  *
  */
-const updateRepositories = (state, {repositories}) => ({
-	...state,
-	repositories
-});
-
-
-
-/**
- *
- */
-export default function home(state = initialState, {type, payload}) {
-	switch (type) {
+export default function home(state = initialState, action) {
+	switch (action.type) {
 		case UPDATE_REPOSITORIES:
-			return updateRepositories(state, payload);
+			return {
+				repositories: action.payload.repositories
+			};
 
 		default:
 			return state;

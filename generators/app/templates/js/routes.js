@@ -9,10 +9,10 @@ import {fetchRepositories} from './actions/home';
 /**
  *
  */
-const onEnterHome = ({params}) =>
+const onEnterHome = () =>
 	store.dispatch(
 		fetchRepositories(
-			params.organization || 'v-technologies'
+			'v-technologies'
 		)
 	);
 
@@ -24,7 +24,7 @@ const onEnterHome = ({params}) =>
 const routes = (
 	<Router history={browserHistory}>
 		<Route
-			path="/(:organization)"
+			path="/"
 			component={HomeContainer}
 			onEnter={onEnterHome}
 		/>
