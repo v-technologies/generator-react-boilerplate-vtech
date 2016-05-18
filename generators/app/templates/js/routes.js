@@ -7,7 +7,8 @@ import {fetchRepositories} from './actions/home';
 
 
 /**
- *
+ *	Dispatches an action of type FETCH_REPOSITORIES when entering
+ *	the home route.
  */
 const onEnterHome = () =>
 	store.dispatch(
@@ -19,7 +20,7 @@ const onEnterHome = () =>
 
 
 /**
- *
+ * Application routes.
  */
 const routes = (
 	<Router history={browserHistory}>

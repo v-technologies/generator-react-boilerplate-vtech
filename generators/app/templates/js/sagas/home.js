@@ -6,7 +6,9 @@ import {fetchByOrganization} from '../api/repositories';
 
 
 /**
+ *	Fetches and updates repositories.
  *
+ *	@param {object} action - Action.
  */
 export function* fetchRepositoriesWorker(action) {
 	// calls fetchByOrganization() and waits for the result
@@ -20,7 +22,8 @@ export function* fetchRepositoriesWorker(action) {
 }
 
 /**
- *
+ *	Calls fetchRepositoriesWorker() each time an action of
+ *	type FETCH_REPOSITORIES is dispatched.
  */
 export function* watchFetchRepositories() {
 	yield* takeLatest(

@@ -10,14 +10,14 @@ import messages from './messages/en';
 
 
 /**
- *
+ *	Registers the default locale for react-intl.
  */
 addLocaleData(en);
 
 
 
 /**
- *
+ *	Wraps the application with data and intl providers.
  */
 const app = (
 	<Provider store={store}>
@@ -29,4 +29,7 @@ const app = (
 
 
 
+/**
+ *	Renders the application on #app.
+ */
 render(app, document.getElementById('app'));

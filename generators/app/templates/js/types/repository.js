@@ -3,7 +3,7 @@ import {PropTypes} from 'react';
 
 
 /**
- *
+ *	Prop types of a repository.
  */
 export const repositoryPropTypes = {
 	name: PropTypes.string.isRequired,
@@ -13,6 +13,6 @@ export const repositoryPropTypes = {
 };
 
 /**
- *
+ *	Shape of a repository.
  */
 export const repositoryShape = PropTypes.shape(repositoryPropTypes);

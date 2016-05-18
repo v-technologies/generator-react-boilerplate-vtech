@@ -3,7 +3,7 @@ import {UPDATE_REPOSITORIES} from '../actions/home';
 
 
 /**
- *
+ *	Initial state.
  */
 const initialState = {
 	repositories: []
@@ -12,7 +12,11 @@ const initialState = {
 
 
 /**
+ *	Reduces home actions.
  *
+ *	@param {object} state - State.
+ *	@param {object} action - Action.
+ *	@return {object} - Updated state.
  */
 export default function home(state = initialState, action) {
 	switch (action.type) {
