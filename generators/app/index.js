@@ -71,6 +71,12 @@ module.exports = yeoman.Base.extend({
 				name: 'distCssName',
 				message: 'What will be the name of the built CSS file?',
 				default: 'app.css'
+			},
+			{
+				type: 'input',
+				name: 'browserSyncProxy',
+				message: 'On which URL your project will be served?',
+				default: 'localhost:8080'
 			}
 		];
 
