@@ -3,7 +3,6 @@
 var fs = require('fs');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
-var ejs = require('ejs');
 
 
 
